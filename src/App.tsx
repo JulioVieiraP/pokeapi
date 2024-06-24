@@ -1,7 +1,12 @@
+import { BrowserRouter } from 'react-router-dom'
+import RouterView from './Routes'
+
 function App() {
   return (
     <>
-      <h1>Ola mundo</h1>
+      <BrowserRouter>
+        <RouterView />
+      </BrowserRouter>
     </>
   )
 }
