@@ -1,7 +1,17 @@
+import PokeType from '../../components/PokeType'
+
 const Home = () => {
   return (
     <>
-      <h1>ola mundo</h1>
+      <PokeType>normal</PokeType>
+      <PokeType>fire</PokeType>
+      <PokeType>water</PokeType>
+      <PokeType>electric</PokeType>
+      <PokeType>grass</PokeType>
+      <PokeType>ice</PokeType>
+      <PokeType>fighting</PokeType>
+      <PokeType>poison</PokeType>
+      <PokeType>ground</PokeType>
     </>
   )
 }
