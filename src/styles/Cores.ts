@@ -20,9 +20,10 @@ export const Colors = {
   dragon: '#7037FF',
   dark: '#75574C',
   steel: '#B7B9D0',
-  fairy: '#E69EAC',
+  fairy: '#E69EAC'
+}
 
-  // Grayscale
+export const Grayscale = {
   Dark: '#212121',
   Medium: '#666666',
   Light: '#E0E0E0',
