@@ -71,4 +71,5 @@ export const Filter = styled.div`
   color: ${Colors.primary};
   margin-left: 16px;
   box-shadow: ${InnerShadow.dp2};
+  cursor: pointer;
 `
