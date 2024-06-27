@@ -7,8 +7,7 @@ export const Main = styled.main`
 
 export const Content = styled.div`
   width: 352px;
-  max-width: calc(100% - 8px);
-  height: 80vh;
+  height: 85vh;
   border-radius: 8px;
   background-color: ${Grayscale.White};
   display: grid;
