@@ -3,7 +3,6 @@ import { Colors, Grayscale } from '../../styles/Cores'
 import { DropShadow, InnerShadow } from '../../styles/Shadows'
 
 export const Header = styled.header`
-  background-color: ${Colors.primary};
   height: 128px;
 `
 
@@ -45,12 +44,14 @@ export const Label = styled.label`
   display: flex;
   align-items: center;
   cursor: text;
+  background-color: ${Grayscale.White};
 `
 
 export const SearchIcon = styled.img`
   width: 16px;
   height: 16px;
   margin: 0 8px 0 16px;
+  background-color: ${Grayscale.White};
 `
 
 export const Input = styled.input`
@@ -58,6 +59,7 @@ export const Input = styled.input`
   outline: none;
   width: 85%;
   border-radius: 16px;
+  background-color: ${Grayscale.White};
 `
 
 export const Filter = styled.div`

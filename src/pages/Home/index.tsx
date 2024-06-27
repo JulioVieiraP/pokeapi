@@ -1,11 +1,11 @@
-import Card from '../../components/Card'
 import Header from '../../components/Header'
+import ListaPokes from '../../components/ListaPokes'
 
 const Home = () => {
   return (
     <>
       <Header />
-      <Card />
+      <ListaPokes />
     </>
   )
 }

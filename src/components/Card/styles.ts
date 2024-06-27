@@ -2,8 +2,10 @@
 import styled from 'styled-components'
 import { DropShadow } from '../../styles/Shadows'
 import { Body3, Caption } from '../../styles/Typography'
+import { Grayscale } from '../../styles/Cores'
 
 export const Card = styled.div`
+  background-color: ${Grayscale.White};
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -31,6 +33,7 @@ export const Number = styled.span`
 `
 
 export const Title = styled.p`
+  background-color: ${Grayscale.White};
   width: 88px;
   height: 26px;
   margin-bottom: 4px;

@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { Colors } from './Cores'
 
 const Globalstyle = createGlobalStyle`
   *{
@@ -8,6 +9,7 @@ const Globalstyle = createGlobalStyle`
     text-decoration: none;
     list-style: none;
     font-family: "Roboto", sans-serif;
+    background-color: ${Colors.primary};
 
     .container {
       max-width: 360px;
