@@ -17,7 +17,7 @@ const ListaPokes = () => {
             key={pokemon.name}
             image={getPokemonImageUrl(pokemon.id)}
             name={pokemon.name}
-            id={pokemon.id.toString()}
+            id={pokemon.id}
           />
         ))}
       </S.Content>

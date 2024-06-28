@@ -1,6 +1,7 @@
 import { useGetPokemonByIdQuery } from '../../services/api'
 import { useParams } from 'react-router-dom'
-import { getPokemonImageUrl } from '../../utils/pokemonUtils'
+import { formatId, getPokemonImageUrl } from '../../utils/pokemonUtils'
+import PokeImg from '../../components/PokeImg'
 
 const Pokemon = () => {
   const { id } = useParams<{ id: string }>()
@@ -11,9 +12,8 @@ const Pokemon = () => {
   return (
     <div>
       <h1>{pokemon.name}</h1>
-      <img src={getPokemonImageUrl(pokemon.id)} alt={pokemon.name} />
-      <p>ID: {pokemon.id}</p>
-      <p>URL: {pokemon.sprites.front_default}</p>
+      <PokeImg src={getPokemonImageUrl(pokemon.id)} width="grande" />
+      <p>ID: {formatId(pokemon.id)}</p>
     </div>
   )
 }

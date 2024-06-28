@@ -4,3 +4,7 @@ const SPRITES_BASE_URL =
 export const getPokemonImageUrl = (id: number): string => {
   return `${SPRITES_BASE_URL}${id}.png`
 }
+
+export const formatId = (id: number): string => {
+  return `#${id.toString().padStart(3, '0')}`
+}
