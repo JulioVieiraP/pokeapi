@@ -1,41 +1,78 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { getPokemonImageUrl } from '../utils/pokemonUtils'
 
-const API_URL = 'https://pokeapi.co/api/v2/'
+const POKEMON_API_URL = 'https://pokeapi.co/api/v2/'
+const SPRITES_BASE_URL =
+  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/'
 
+// Tipo para representar um Pokémon retornado pela API
 interface Pokemon {
-  id: string
+  id: number
   name: string
   url: string
   imageUrl: string
 }
 
-interface PokemonResponse {
-  results: Pokemon[]
+// Tipo para representar os detalhes de um Pokémon
+interface PokemonDetails {
+  id: number
+  name: string
+  height: number
+  weight: number
+  abilities: {
+    ability: {
+      name: string
+      url: string
+    }
+    is_hidden: boolean
+    slot: number
+  }[]
+  sprites: {
+    front_default: string
+    front_shiny: string
+  }
+  types: {
+    slot: number
+    type: {
+      name: string
+      url: string
+    }
+  }[]
 }
 
 const api = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: API_URL
+    baseUrl: POKEMON_API_URL
   }),
   endpoints: (builder) => ({
-    getPokemon: builder.query<PokemonResponse, void>({
-      query: () => ({
-        url: 'pokemon?limit=10000'
-      }),
+    getPokemon: builder.query<Pokemon[], void>({
+      query: () => 'pokemon?limit=10000',
       transformResponse: (response: {
         results: { name: string; url: string }[]
       }) => {
-        const results = response.results.map((item, index) => {
-          const id = (index + 1).toString().padStart(3, '0')
-          const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index + 1}.png`
-          return { ...item, id, imageUrl }
-        })
-        return { results }
+        const pokemonList: Pokemon[] = response.results.map(
+          (pokemonData, index) => ({
+            id: index + 1,
+            name: pokemonData.name,
+            url: pokemonData.url,
+            imageUrl: getPokemonImageUrl(index + 1)
+          })
+        )
+        return pokemonList
       }
     }),
-    getPokemonById: builder.query<Pokemon, string>({
-      query: (id: string) => ({
-        url: `pokemon/${id}`
+
+    getPokemonById: builder.query<PokemonDetails, string>({
+      query: (id) => `pokemon/${id}`,
+      transformResponse: (response: PokemonDetails) => ({
+        id: response.id,
+        name: response.name,
+        height: response.height,
+        weight: response.weight,
+        abilities: response.abilities,
+        sprites: response.sprites,
+        types: response.types,
+        imageUrl: `${SPRITES_BASE_URL}${response.id}.png`
       })
     })
   })
