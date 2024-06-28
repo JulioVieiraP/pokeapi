@@ -3,8 +3,9 @@ import styled from 'styled-components'
 import { DropShadow } from '../../styles/Shadows'
 import { Body3, Caption } from '../../styles/Typography'
 import { Grayscale } from '../../styles/Cores'
+import { Link } from 'react-router-dom'
 
-export const Card = styled.div`
+export const Card = styled(Link)`
   background-color: ${Grayscale.White};
   display: flex;
   align-items: center;
@@ -25,18 +26,20 @@ export const Number = styled.span`
   position: absolute;
   top: 5px;
   right: 5px;
-  background-color: white;
   padding: 2px 4px;
+  color: ${Grayscale.Medium};
+  background-color: ${Grayscale.White};
   font-size: ${Caption.fontSize};
   font-weight: ${Caption.fontWeight};
   line-height: ${Caption.lineHeight};
 `
 
 export const Title = styled.p`
-  background-color: ${Grayscale.White};
   width: 88px;
   height: 26px;
   margin-bottom: 4px;
+  color: ${Grayscale.Dark};
+  background-color: ${Grayscale.White};
   font-size: ${Body3.fontSize};
   font-weight: ${Body3.fontWeight};
   line-height: ${Body3.lineHeight};

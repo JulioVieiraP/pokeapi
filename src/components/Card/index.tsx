@@ -10,7 +10,7 @@ type Props = {
 
 const Card = ({ image, name, id }: Props) => {
   return (
-    <S.Card>
+    <S.Card to={`pokemon/${id}`}>
       <S.Number>#{id}</S.Number>
       <PokeImg src={image} width="pequeno" />
       <S.Title>{name}</S.Title>

@@ -32,10 +32,15 @@ const api = createApi({
         })
         return { results }
       }
+    }),
+    getPokemonById: builder.query<Pokemon, string>({
+      query: (id: string) => ({
+        url: `pokemon/${id}`
+      })
     })
   })
 })
 
-export const { useGetPokemonQuery } = api
+export const { useGetPokemonQuery, useGetPokemonByIdQuery } = api
 
 export default api

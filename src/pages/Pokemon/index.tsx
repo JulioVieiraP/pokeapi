@@ -1,5 +1,8 @@
+import { useParams } from 'react-router-dom'
+
 const Pokemon = () => {
-  return <h1>pokemon</h1>
+  const { id } = useParams()
+  return <h1>pokemon {id}</h1>
 }
 
 export default Pokemon

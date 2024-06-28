@@ -11,14 +11,15 @@ const ListaPokes = () => {
   return (
     <S.Main>
       <S.Content className="container">
-        {data?.results.map((item, index) => {
+        {data?.results.map((pokemon, index) => {
           const pokemonId = (index + 1).toString().padStart(3, '0')
           const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index + 1}.png`
+
           return (
             <Card
-              key={item.name}
+              key={pokemon.name}
               image={imageUrl}
-              name={item.name}
+              name={pokemon.name}
               id={pokemonId}
             />
           )
