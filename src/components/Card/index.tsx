@@ -1,14 +1,19 @@
 import PokeImg from '../PokeImg'
-import PokeImage from '../../Assets/images/image.png'
 
 import * as S from './styles'
 
-const Card = () => {
+type Props = {
+  id: string
+  name: string
+  image: string
+}
+
+const Card = ({ image, name, id }: Props) => {
   return (
     <S.Card>
-      <S.Number>#999</S.Number>
-      <PokeImg src={PokeImage} width="pequeno" />
-      <S.Title>Name</S.Title>
+      <S.Number>#{id}</S.Number>
+      <PokeImg src={image} width="pequeno" />
+      <S.Title>{name}</S.Title>
     </S.Card>
   )
 }
