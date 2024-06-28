@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-const API_URL = 'https://fake-api-tau.vercel.app/api/efood/'
+const API_URL = 'https://pokeapi.co/api/v2/'
 
 const api = createApi({
   baseQuery: fetchBaseQuery({
@@ -9,7 +9,7 @@ const api = createApi({
   endpoints: (builder) => ({
     getPokemon: builder.query({
       query: () => ({
-        url: 'restaurantes'
+        url: 'pokemon?limit=10000'
       })
     })
   })
