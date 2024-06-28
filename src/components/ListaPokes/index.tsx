@@ -1,4 +1,3 @@
-import React from 'react'
 import { useGetPokemonQuery } from '../../services/api'
 import Card from '../Card'
 import * as S from './styles'
