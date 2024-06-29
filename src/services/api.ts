@@ -2,8 +2,6 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { getPokemonImageUrl } from '../utils/pokemonUtils'
 
 const POKEMON_API_URL = 'https://pokeapi.co/api/v2/'
-const SPRITES_BASE_URL =
-  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/'
 
 // Tipo para representar um Pokémon retornado pela API
 interface Pokemon {
@@ -72,7 +70,7 @@ const api = createApi({
         abilities: response.abilities,
         sprites: response.sprites,
         types: response.types,
-        imageUrl: `${SPRITES_BASE_URL}${response.id}.png`
+        imageUrl: getPokemonImageUrl(response.id)
       })
     })
   })
