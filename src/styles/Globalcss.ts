@@ -9,7 +9,14 @@ const Globalstyle = createGlobalStyle`
     text-decoration: none;
     list-style: none;
     font-family: "Roboto", sans-serif;
-    background-color: ${Colors.primary};
+
+  html, body, #root {
+    height: 100%;
+  }
+
+    body{
+      background-color: ${Colors.primary};
+    }
 
     .container {
       max-width: 360px;
