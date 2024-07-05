@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Headline, SubTitle2 } from '../../styles/Typography'
+import { Body3, Caption, Headline, SubTitle2 } from '../../styles/Typography'
 import { Grayscale } from '../../styles/Cores'
 
 interface PageProps {
@@ -72,10 +72,57 @@ export const Body = styled.div`
   border-radius: 8px;
   background-color: ${Grayscale.White};
 
+  h2 {
+    margin: 16px 0;
+    display: flex;
+    justify-content: center;
+  }
+
   ul {
-    padding-top: 30px;
+    padding-top: 20px;
     display: flex;
     justify-content: center;
     gap: 16px;
+  }
+`
+
+export const About = styled.div`
+  max-width: 312px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .icon-text {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    span {
+      font-size: ${Body3.fontSize};
+      line-height: ${Body3.lineHeight};
+      font-weight: ${Body3.fontWeight};
+    }
+
+    p {
+      font-size: ${Caption.fontSize};
+      line-height: ${Caption.lineHeight};
+      font-weight: ${Caption.fontWeight};
+      color: ${Grayscale.Medium};
+    }
+  }
+
+  .divider {
+    width: 1px;
+    height: 48px;
+    background-color: ${Grayscale.Light};
+    margin: 0 16px;
   }
 `
