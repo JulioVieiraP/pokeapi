@@ -69,9 +69,13 @@ export const Body = styled.div`
   height: auto;
   margin: 0 auto;
   margin-top: -40px;
-  background-color: white;
+  border-radius: 8px;
+  background-color: ${Grayscale.White};
 
   ul {
-    padding-top: 20px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
   }
 `

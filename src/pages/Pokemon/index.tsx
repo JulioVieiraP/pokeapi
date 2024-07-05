@@ -10,6 +10,7 @@ import PokeImg from '../../components/PokeImg'
 import home from '../../Assets/images/HomeButton.png'
 import BackIcon from '../../Assets/images/back.png'
 import advancer from '../../Assets/images/advance.png'
+import PokeType from '../../components/PokeType'
 
 const Pokemon: React.FC = () => {
   const { id } = useParams<{ id: string }>()
@@ -48,11 +49,11 @@ const Pokemon: React.FC = () => {
       <S.Body>
         <ul>
           <li>
-            <strong>Tipo Principal:</strong> {primaryType}
+            <PokeType>{primaryType}</PokeType>
           </li>
           {secondaryType && (
             <li>
-              <strong>Tipo Secundário:</strong> {secondaryType}
+              <PokeType>{secondaryType}</PokeType>
             </li>
           )}
         </ul>
