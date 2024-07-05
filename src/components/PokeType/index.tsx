@@ -1,3 +1,4 @@
+import { typeColors } from '../../utils/TypeColors'
 import * as S from './styles'
 
 type Props = {
@@ -5,7 +6,7 @@ type Props = {
 }
 
 const PokeType = ({ children }: Props) => {
-  const bgColor = S.typeColors[children.toLowerCase()]
+  const bgColor = typeColors[children.toLowerCase()]
 
   return <S.Tag bgColor={bgColor}>{children}</S.Tag>
 }

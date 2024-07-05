@@ -1,6 +1,6 @@
 import { Colors } from '../styles/Cores'
 
-const typeColors: { [key: string]: string } = {
+export const typeColors: { [key: string]: string } = {
   normal: Colors.normal,
   fire: Colors.fire,
   water: Colors.water,
