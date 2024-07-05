@@ -18,32 +18,44 @@ const Pokemon: React.FC = () => {
   if (!pokemon) return null
 
   const primaryType = pokemon.types[0]?.type.name
+  const secondaryType = pokemon.types[1]?.type.name
   const bgColor = getColorByType(primaryType)
 
   return (
-    <S.Page bgColor={bgColor} className="container">
-      <S.Header>
-        <img src={home} alt="Home" />
+    <S.Page bgColor={bgColor}>
+      <div className="container">
+        <S.Header>
+          <img src={home} alt="Home" />
 
-        <div>
-          <S.Title>{pokemon.name}</S.Title>
-        </div>
+          <div>
+            <S.Title>{pokemon.name}</S.Title>
+          </div>
 
-        <span>{formatId(pokemon.id)}</span>
-      </S.Header>
+          <span>{formatId(pokemon.id)}</span>
+        </S.Header>
 
-      <S.Navigation>
-        <span>
-          <img src={BackIcon} alt="Voltar para o pokemon anterior" />
-        </span>
-        <PokeImg src={getPokemonImageUrl(pokemon.id)} width="grande" />
-        <span>
-          <img src={advancer} alt="avançar para o pokemon anterior" />
-        </span>
-      </S.Navigation>
+        <S.Navigation>
+          <span>
+            <img src={BackIcon} alt="Voltar para o pokemon anterior" />
+          </span>
+          <PokeImg src={getPokemonImageUrl(pokemon.id)} width="grande" />
+          <span>
+            <img src={advancer} alt="avançar para o pokemon anterior" />
+          </span>
+        </S.Navigation>
+      </div>
 
       <S.Body>
-        <h3>test</h3>
+        <ul>
+          <li>
+            <strong>Tipo Principal:</strong> {primaryType}
+          </li>
+          {secondaryType && (
+            <li>
+              <strong>Tipo Secundário:</strong> {secondaryType}
+            </li>
+          )}
+        </ul>
       </S.Body>
     </S.Page>
   )

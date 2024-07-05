@@ -53,8 +53,8 @@ export const Title = styled.h1`
 export const Navigation = styled.div`
   display: flex;
   justify-content: space-around;
-  text-align: center;
   align-items: center;
+  text-align: center;
 
   span {
     cursor: pointer;
@@ -65,6 +65,13 @@ export const Navigation = styled.div`
 `
 
 export const Body = styled.div`
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
   margin-top: -40px;
   background-color: white;
+
+  ul {
+    padding-top: 20px;
+  }
 `
