@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useGetPokemonByIdQuery } from '../../services/api'
 
@@ -18,11 +18,14 @@ const Pokemon = () => {
   const { id } = useParams<{ id: string }>()
   const { data: pokemon } = useGetPokemonByIdQuery(id || '')
 
+  const [bgColor, setBgColor] = useState('')
+
   useEffect(() => {
     if (pokemon) {
       const primaryType = pokemon.types[0]?.type.name
-      const bgColor = getColorByType(primaryType)
-      document.body.style.backgroundColor = bgColor
+      const color = getColorByType(primaryType)
+      setBgColor(color)
+      document.body.style.backgroundColor = color
 
       // Limpa a cor de fundo ao desmontar o componente
       return () => {
@@ -35,7 +38,6 @@ const Pokemon = () => {
 
   const primaryType = pokemon.types[0]?.type.name
   const secondaryType = pokemon.types[1]?.type.name
-  const bgColor = getColorByType(primaryType)
 
   return (
     <S.Page bgColor={bgColor}>
