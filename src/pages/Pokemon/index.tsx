@@ -1,8 +1,8 @@
+import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useGetPokemonByIdQuery } from '../../services/api'
 
 import * as S from './styles'
-
 import { getColorByType } from '../../utils/TypeColors'
 import { formatId, getPokemonImageUrl } from '../../utils/pokemonUtils'
 import PokeImg from '../../components/PokeImg'
@@ -17,6 +17,19 @@ import HeightIcon from '../../Assets/images/Height.png'
 const Pokemon = () => {
   const { id } = useParams<{ id: string }>()
   const { data: pokemon } = useGetPokemonByIdQuery(id || '')
+
+  useEffect(() => {
+    if (pokemon) {
+      const primaryType = pokemon.types[0]?.type.name
+      const bgColor = getColorByType(primaryType)
+      document.body.style.backgroundColor = bgColor
+
+      // Limpa a cor de fundo ao desmontar o componente
+      return () => {
+        document.body.style.backgroundColor = ''
+      }
+    }
+  }, [pokemon])
 
   if (!pokemon) return null
 

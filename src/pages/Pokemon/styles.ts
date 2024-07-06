@@ -7,7 +7,7 @@ interface PageProps {
 }
 
 export const Page = styled.div<PageProps>`
-  max-width: 360px;
+  max-width: 375px;
   width: 100%;
   margin: 0 auto;
   min-height: 100vh;

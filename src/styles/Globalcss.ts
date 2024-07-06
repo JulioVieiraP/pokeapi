@@ -9,21 +9,21 @@ const Globalstyle = createGlobalStyle`
     text-decoration: none;
     list-style: none;
     font-family: "Roboto", sans-serif;
+  }
 
   html, body, #root {
     height: 100%;
   }
 
-    body{
-      background-color: ${Colors.primary};
-    }
+  body{
+    background-color: ${Colors.primary};
+  }
 
-    .container {
-      max-width: 360px;
-      width: 100%;
-      margin: 0 auto;
-      padding: 16px 16px 0;
-    }
+  .container {
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px 16px 0;
   }
 `
 

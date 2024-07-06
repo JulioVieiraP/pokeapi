@@ -36,6 +36,14 @@ interface PokemonDetails {
       url: string
     }
   }[]
+  description: string
+}
+
+// Tipo para representar as informações de espécie de um Pokémon
+interface PokemonSpecies {
+  flavor_text_entries: {
+    flavor_text: string
+  }[]
 }
 
 const api = createApi({
@@ -70,12 +78,21 @@ const api = createApi({
         abilities: response.abilities,
         sprites: response.sprites,
         types: response.types,
-        imageUrl: getPokemonImageUrl(response.id)
+        imageUrl: getPokemonImageUrl(response.id),
+        description: ''
       })
+    }),
+
+    getPokemonSpeciesById: builder.query<PokemonSpecies, string>({
+      query: (id) => `pokemon-species/${id}`
     })
   })
 })
 
-export const { useGetPokemonQuery, useGetPokemonByIdQuery } = api
+export const {
+  useGetPokemonQuery,
+  useGetPokemonByIdQuery,
+  useGetPokemonSpeciesByIdQuery
+} = api
 
 export default api
