@@ -16,6 +16,8 @@ import PokeType from '../../components/PokeType'
 import About from '../../components/About'
 import Stats from '../../components/Stats'
 import { useNavigate, useParams } from 'react-router-dom'
+import { setSearchTerm } from '../../redux/Features/searchSlice'
+import { useDispatch } from 'react-redux'
 
 const Pokemon = () => {
   const { id } = useParams<{ id: string }>()
@@ -23,6 +25,7 @@ const Pokemon = () => {
   const [currentPokemonId, setCurrentPokemonId] = useState(parseInt(id || ''))
 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const { data: pokemon } = useGetPokemonByIdQuery(currentPokemonId.toString())
   const { data: speciesData } = useGetPokemonSpeciesByIdQuery(
@@ -53,6 +56,11 @@ const Pokemon = () => {
     }
   }, [currentPokemonId, id, navigate])
 
+  const handleHomeClick = () => {
+    dispatch(setSearchTerm(''))
+    navigate('/')
+  }
+
   const goToNextPokemon = () => {
     setCurrentPokemonId((prevId) => prevId + 1)
   }
@@ -75,7 +83,7 @@ const Pokemon = () => {
     <S.Page bgColor={bgColor}>
       <div className="container">
         <S.Header>
-          <button onClick={() => navigate('/')}>
+          <button onClick={handleHomeClick}>
             <img src={home} alt="Home" />
           </button>
           <div>

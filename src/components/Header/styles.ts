@@ -9,6 +9,7 @@ export const Header = styled.header`
 export const Container = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
 `
 
 export const Logo = styled.img`
@@ -74,4 +75,32 @@ export const Filter = styled.div`
   margin-left: 16px;
   box-shadow: ${InnerShadow.dp2};
   cursor: pointer;
+  position: relative;
+`
+
+export const Dropdow = styled.div`
+  position: absolute;
+  width: 105px;
+  height: 80px;
+  top: calc(100% + 8px);
+  right: 0;
+  background-color: ${Grayscale.White};
+  border: 1px solid ${Grayscale.Dark};
+  border-radius: 8px;
+  box-shadow: ${InnerShadow.dp2};
+  z-index: 1;
+`
+
+export const DropdowItem = styled.li`
+  list-style-type: none;
+  padding: 8px;
+  cursor: pointer;
+  &:hover {
+    background-color: ${Grayscale.Dark};
+  }
+`
+
+export const DropdowList = styled.ul`
+  padding: 0;
+  margin: 0;
 `

@@ -1,4 +1,3 @@
-// src/components/Header/Header.tsx
 import pokeLogo from '../../Assets/images/Pokeball.png'
 import LupaIcone from '../../Assets/images/search.png'
 import * as S from './styles'
@@ -9,6 +8,7 @@ import { setSearchTerm } from '../../redux/Features/searchSlice'
 const Header = () => {
   const dispatch = useDispatch()
   const [searchInput, setSearchInput] = useState('')
+  const [isOpen, setIsOpen] = useState(false)
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchTerm = event.target.value.trim().toLowerCase()
@@ -36,7 +36,14 @@ const Header = () => {
           />
         </S.Form>
 
-        <S.Filter>#</S.Filter>
+        <S.Filter onClick={() => setIsOpen(!isOpen)}>#</S.Filter>
+        {isOpen && (
+          <S.Dropdow>
+            <ul>
+              <li>testando</li>
+            </ul>
+          </S.Dropdow>
+        )}
       </S.Container>
     </S.Header>
   )
