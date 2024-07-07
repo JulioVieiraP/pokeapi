@@ -18,7 +18,7 @@ import Stats from '../../components/Stats'
 import { useNavigate, useParams } from 'react-router-dom'
 
 const Pokemon = () => {
-  const { id } = useParams<{ id: string }>() // Obtém o id da URL
+  const { id } = useParams<{ id: string }>()
   const [bgColor, setBgColor] = useState('')
   const [currentPokemonId, setCurrentPokemonId] = useState(parseInt(id || ''))
 
@@ -29,7 +29,7 @@ const Pokemon = () => {
     currentPokemonId.toString()
   )
 
-  const description = speciesData?.flavor_text_entries[0]?.flavor_text
+  const description = speciesData?.flavor_text_entries[1]?.flavor_text
     .replace(/[\f]/g, ' ')
     .toLowerCase()
 
