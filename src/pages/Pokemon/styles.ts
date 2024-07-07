@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Headline, SubTitle2 } from '../../styles/Typography'
+import { Body3, Headline, SubTitle2 } from '../../styles/Typography'
 import { Grayscale } from '../../styles/Cores'
 
 interface PageProps {
@@ -89,5 +89,11 @@ export const Body = styled.div`
 export const description = styled.div`
   width: 312px;
   height: 60px;
-  margin: 16px 0;
+  padding: 16px 0;
+
+  p {
+    font-size: ${Body3.fontSize};
+    font-weight: ${Body3.fontWeight};
+    line-height: ${Body3.lineHeight};
+  }
 `

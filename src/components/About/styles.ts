@@ -5,7 +5,7 @@ import { Grayscale } from '../../styles/Cores'
 export const About = styled.div`
   max-width: 312px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 
   div {

@@ -6,9 +6,11 @@ import { formatNumber } from '../../utils/pokemonUtils'
 type Props = {
   weight: number
   height: number
+  moveOne: string
+  moveTwo: string
 }
 
-const About = ({ height, weight }: Props) => {
+const About = ({ height, weight, moveOne, moveTwo }: Props) => {
   return (
     <>
       <h2>About</h2>
@@ -30,8 +32,8 @@ const About = ({ height, weight }: Props) => {
         </div>
         <div className="divider"></div>
         <div>
-          <span>Chlorophyll</span>
-          <span>Overgrow</span>
+          <span>{moveOne}</span>
+          <span>{moveTwo}</span>
           <p>Moves</p>
         </div>
       </S.About>

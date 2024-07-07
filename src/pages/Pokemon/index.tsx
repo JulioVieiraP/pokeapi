@@ -45,6 +45,9 @@ const Pokemon = () => {
   const primaryType = pokemon.types[0]?.type.name
   const secondaryType = pokemon.types[1]?.type.name
 
+  const moveOne = pokemon.moves[0]?.move.name
+  const moveTwo = pokemon.moves[1]?.move.name
+
   return (
     <S.Page bgColor={bgColor}>
       <div className="container">
@@ -81,7 +84,12 @@ const Pokemon = () => {
               </li>
             )}
           </ul>
-          <About height={pokemon.height} weight={pokemon.weight} />
+          <About
+            height={pokemon.height}
+            weight={pokemon.weight}
+            moveOne={moveOne}
+            moveTwo={moveTwo}
+          />
           <S.description>
             <p>{description}</p>
           </S.description>
