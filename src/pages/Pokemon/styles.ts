@@ -12,6 +12,13 @@ export const Page = styled.div<PageProps>`
   margin: 0 auto;
   min-height: 100vh;
   background-color: ${({ bgColor }) => bgColor};
+
+  button {
+    background-color: transparent;
+    color: ${Grayscale.White};
+    border: none;
+    cursor: pointer;
+  }
 `
 
 export const Header = styled.header`

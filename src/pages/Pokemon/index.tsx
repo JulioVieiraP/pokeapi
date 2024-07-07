@@ -15,10 +15,14 @@ import advancer from '../../Assets/images/advance.png'
 import PokeType from '../../components/PokeType'
 import About from '../../components/About'
 import Stats from '../../components/Stats'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const Pokemon = () => {
-  const [currentPokemonId, setCurrentPokemonId] = useState(1)
+  const { id } = useParams<{ id: string }>() // Obtém o id da URL
   const [bgColor, setBgColor] = useState('')
+  const [currentPokemonId, setCurrentPokemonId] = useState(parseInt(id || ''))
+
+  const navigate = useNavigate()
 
   const { data: pokemon } = useGetPokemonByIdQuery(currentPokemonId.toString())
   const { data: speciesData } = useGetPokemonSpeciesByIdQuery(
@@ -43,6 +47,12 @@ const Pokemon = () => {
     }
   }, [pokemon])
 
+  useEffect(() => {
+    if (parseInt(id || '') !== currentPokemonId) {
+      navigate(`/pokemon/${currentPokemonId}`)
+    }
+  }, [currentPokemonId, id, navigate])
+
   const goToNextPokemon = () => {
     setCurrentPokemonId((prevId) => prevId + 1)
   }
@@ -65,7 +75,9 @@ const Pokemon = () => {
     <S.Page bgColor={bgColor}>
       <div className="container">
         <S.Header>
-          <img src={home} alt="Home" />
+          <button onClick={() => navigate('/')}>
+            <img src={home} alt="Home" />
+          </button>
           <div>
             <S.Title>{pokemon.name}</S.Title>
           </div>
