@@ -92,15 +92,41 @@ export const Dropdow = styled.div`
 `
 
 export const DropdowItem = styled.li`
-  list-style-type: none;
   padding: 8px;
-  cursor: pointer;
-  &:hover {
-    background-color: ${Grayscale.Dark};
-  }
-`
 
-export const DropdowList = styled.ul`
-  padding: 0;
-  margin: 0;
+  label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    input[type='radio'] {
+      margin-right: 8px;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid ${Colors.primary};
+      position: relative;
+      cursor: pointer;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:checked:before {
+        width: 10px;
+        height: 10px;
+        background-color: ${Colors.primary};
+      }
+    }
+  }
 `

@@ -40,7 +40,18 @@ const Header = () => {
         {isOpen && (
           <S.Dropdow>
             <ul>
-              <li>testando</li>
+              <S.DropdowItem>
+                <label>
+                  <input type="radio" />
+                  <span>Number</span>
+                </label>
+              </S.DropdowItem>
+              <S.DropdowItem>
+                <label>
+                  <input type="radio" />
+                  <span>Name</span>
+                </label>
+              </S.DropdowItem>
             </ul>
           </S.Dropdow>
         )}
