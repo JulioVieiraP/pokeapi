@@ -8,3 +8,7 @@ export const getPokemonImageUrl = (id: number): string => {
 export const formatId = (id: number): string => {
   return `#${id.toString().padStart(3, '0')}`
 }
+
+export const formatNumber = (num: number) => {
+  return (num / 10).toString().replace('.', ',')
+}
