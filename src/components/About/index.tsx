@@ -22,7 +22,7 @@ const About = ({
 }: Props) => {
   return (
     <>
-      <h2 style={{ color }}>About</h2>
+      <S.Title color={color}>About</S.Title>
       <S.About>
         <div>
           <div className="icon-text">

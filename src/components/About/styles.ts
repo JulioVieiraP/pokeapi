@@ -1,6 +1,13 @@
 import { styled } from 'styled-components'
-import { Body3, Caption } from '../../styles/Typography'
+import { Body3, Caption, SubTitle } from '../../styles/Typography'
 import { Grayscale } from '../../styles/Cores'
+
+export const Title = styled.h2<{ color: string }>`
+  color: ${({ color }) => color};
+  font-size: ${SubTitle.fontSize};
+  font-weight: ${SubTitle.fontWeight};
+  line-height: ${SubTitle.lineHeight};
+`
 
 export const About = styled.div`
   max-width: 312px;
