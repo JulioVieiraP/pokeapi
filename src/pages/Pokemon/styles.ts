@@ -126,3 +126,9 @@ export const About = styled.div`
     margin: 0 16px;
   }
 `
+
+export const description = styled.div`
+  width: 312px;
+  height: 60px;
+  margin: 16px 0;
+`

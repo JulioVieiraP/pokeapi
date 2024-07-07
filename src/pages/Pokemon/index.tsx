@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { useGetPokemonByIdQuery } from '../../services/api'
+import {
+  useGetPokemonByIdQuery,
+  useGetPokemonSpeciesByIdQuery
+} from '../../services/api'
 
 import * as S from './styles'
 import { getColorByType } from '../../utils/TypeColors'
@@ -17,6 +20,10 @@ import HeightIcon from '../../Assets/images/Height.png'
 const Pokemon = () => {
   const { id } = useParams<{ id: string }>()
   const { data: pokemon } = useGetPokemonByIdQuery(id || '')
+  const { data: speciesData } = useGetPokemonSpeciesByIdQuery(id || '')
+  const description = speciesData?.flavor_text_entries[0]?.flavor_text
+    .replace(/[\f]/g, ' ')
+    .toLowerCase()
 
   const [bgColor, setBgColor] = useState('')
 
@@ -101,6 +108,9 @@ const Pokemon = () => {
               </div>
             </S.About>
           </div>
+          <S.description>
+            <p>{description}</p>
+          </S.description>
         </section>
       </S.Body>
     </S.Page>
