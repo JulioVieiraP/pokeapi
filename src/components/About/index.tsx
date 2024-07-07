@@ -9,12 +9,20 @@ type Props = {
   moveOne: string
   moveTwo: string
   description?: string
+  color: string
 }
 
-const About = ({ height, weight, moveOne, moveTwo, description }: Props) => {
+const About = ({
+  height,
+  weight,
+  moveOne,
+  moveTwo,
+  description,
+  color
+}: Props) => {
   return (
     <>
-      <h2>About</h2>
+      <h2 style={{ color }}>About</h2>
       <S.About>
         <div>
           <div className="icon-text">

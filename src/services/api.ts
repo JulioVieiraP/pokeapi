@@ -41,6 +41,14 @@ interface PokemonDetails {
       name: string
     }
   }[]
+  stats: {
+    base_stat: number
+    effort: number
+    stat: {
+      name: string
+      url: string
+    }
+  }[]
   description: string
 }
 
@@ -84,8 +92,9 @@ const api = createApi({
         sprites: response.sprites,
         types: response.types,
         moves: response.moves,
-        imageUrl: getPokemonImageUrl(response.id),
-        description: ''
+        stats: response.stats,
+        description: '',
+        imageUrl: getPokemonImageUrl(response.id)
       })
     }),
 

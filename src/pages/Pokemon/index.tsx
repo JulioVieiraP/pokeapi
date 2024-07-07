@@ -15,6 +15,7 @@ import BackIcon from '../../Assets/images/back.png'
 import advancer from '../../Assets/images/advance.png'
 import PokeType from '../../components/PokeType'
 import About from '../../components/About'
+import Stats from '../../components/Stats'
 
 const Pokemon = () => {
   const { id } = useParams<{ id: string }>()
@@ -90,7 +91,9 @@ const Pokemon = () => {
             moveOne={moveOne}
             moveTwo={moveTwo}
             description={description}
+            color={bgColor}
           />
+          <Stats stats={pokemon.stats} primaryType={primaryType} />
         </section>
       </S.Body>
     </S.Page>
