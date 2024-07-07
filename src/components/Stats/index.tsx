@@ -30,6 +30,7 @@ const Stats: React.FC<StatsProps> = ({ stats, primaryType }) => {
 
   return (
     <S.StatsContainer>
+      <S.Title color={color}>Base Stats</S.Title>
       {stats.map((stat) => (
         <S.Stat key={stat.stat.name} color={color}>
           <div>

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { SubTitle } from '../../styles/Typography'
 
 export const StatsContainer = styled.div`
   width: 100%;
@@ -39,4 +40,11 @@ export const Stat = styled.div<{ color: string }>`
     height: 100%;
     background-color: ${({ color }) => color};
   }
+`
+
+export const Title = styled.h2<{ color: string }>`
+  font-size: ${SubTitle.fontSize};
+  font-weight: ${SubTitle.fontWeight};
+  line-height: ${SubTitle.lineHeight};
+  color: ${({ color }) => color};
 `
