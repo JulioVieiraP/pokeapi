@@ -89,10 +89,8 @@ const Pokemon = () => {
             weight={pokemon.weight}
             moveOne={moveOne}
             moveTwo={moveTwo}
+            description={description}
           />
-          <S.description>
-            <p>{description}</p>
-          </S.description>
         </section>
       </S.Body>
     </S.Page>

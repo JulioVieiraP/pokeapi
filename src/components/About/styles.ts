@@ -42,3 +42,15 @@ export const About = styled.div`
     margin: 0 16px;
   }
 `
+
+export const description = styled.div`
+  width: 312px;
+  height: 60px;
+  padding: 16px 0;
+
+  p {
+    font-size: ${Body3.fontSize};
+    font-weight: ${Body3.fontWeight};
+    line-height: ${Body3.lineHeight};
+  }
+`

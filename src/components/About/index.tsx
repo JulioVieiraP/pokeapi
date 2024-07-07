@@ -8,9 +8,10 @@ type Props = {
   height: number
   moveOne: string
   moveTwo: string
+  description?: string
 }
 
-const About = ({ height, weight, moveOne, moveTwo }: Props) => {
+const About = ({ height, weight, moveOne, moveTwo, description }: Props) => {
   return (
     <>
       <h2>About</h2>
@@ -37,6 +38,9 @@ const About = ({ height, weight, moveOne, moveTwo }: Props) => {
           <p>Moves</p>
         </div>
       </S.About>
+      <S.description>
+        <p>{description}</p>
+      </S.description>
     </>
   )
 }
