@@ -11,7 +11,7 @@ type Props = {
 
 const Card = ({ image, name, id }: Props) => {
   return (
-    <S.Card to={`pokemon/${id}`}>
+    <S.Card to={`pokemon/`}>
       <S.Number>{formatId(id)}</S.Number>
       <PokeImg src={image} width="pequeno" />
       <S.Title>{name}</S.Title>

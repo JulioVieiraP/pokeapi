@@ -6,7 +6,7 @@ const RouterView = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/Pokemon/:id" element={<Pokemon />} />
+      <Route path="/Pokemon/" element={<Pokemon />} />
     </Routes>
   )
 }

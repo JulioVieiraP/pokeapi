@@ -20,7 +20,7 @@ const Globalstyle = createGlobalStyle`
   }
 
   .container {
-    max-width: 360px;
+    max-width: 375px;
     width: 100%;
     margin: 0 auto;
     padding: 16px 16px 0;

@@ -51,7 +51,8 @@ export const About = styled.div`
 `
 
 export const description = styled.div`
-  width: 312px;
+  max-width: 312px;
+  width: 100%;
   height: 60px;
   padding: 16px 0;
 

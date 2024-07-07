@@ -56,10 +56,18 @@ export const Navigation = styled.div`
   align-items: center;
   text-align: center;
 
-  span {
+  button {
+    background-color: transparent;
+    border: none;
     cursor: pointer;
+
     img {
       color: ${Grayscale.White};
+    }
+
+    &.hidden {
+      opacity: 0;
+      cursor: auto;
     }
   }
 `
