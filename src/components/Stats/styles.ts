@@ -3,7 +3,7 @@ import { SubTitle } from '../../styles/Typography'
 
 export const StatsContainer = styled.div`
   width: 100%;
-  padding: 16px;
+  padding: 0 16px 16px;
 `
 
 export const Stat = styled.div<{ color: string }>`
