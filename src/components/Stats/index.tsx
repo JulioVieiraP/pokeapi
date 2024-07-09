@@ -16,7 +16,7 @@ interface StatsProps {
   primaryType: string
 }
 
-const Stats: React.FC<StatsProps> = ({ stats, primaryType }) => {
+const Stats = ({ stats, primaryType }: StatsProps) => {
   const color = getColorByType(primaryType)
 
   const statLabels: { [key: string]: string } = {
